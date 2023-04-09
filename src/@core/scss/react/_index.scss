@@ -1,0 +1,21 @@
+// Base Extended (General styles which are not added 'base styles')
+@import 'base-extended';
+
+@import 'dark-layout';
+
+@import 'rtl';
+
+@import 'reactstrap/index';
+
+@import 'app-loader';
+.image-product-detail{
+    // color: #fd0d0d;
+    // position: absolute;
+    // top: -2px;
+    // right: -2px;
+    // width: 24px;
+    // height: 24px;
+}
+.button-minus{
+    height: 42px;
+}

@@ -1,0 +1,64 @@
+import { useEffect, useState } from "react";
+import ProductTab from "./product";
+import { User } from "react-feather";
+import {
+  Alert,
+  Card,
+  CardBody,
+  Col,
+  Nav,
+  NavItem,
+  NavLink,
+  Row,
+  TabContent,
+  TabPane,
+} from "reactstrap";
+import productService from "@Services/productService";
+import "@Styles/react/apps/app-users.scss";
+import { useParams } from "react-router-dom";
+const EmployeeEdit = () => {
+  const [activeTab, setActiveTab] = useState("1");
+  const [data, setData] = useState();
+  const toggle = (tab) => setActiveTab(tab);
+  const { id} = useParams();
+  useEffect(() => {
+    const init = async () => {
+      const result = await productService.GetDetailProduct(id);
+      if (result.data) {
+        setData(result.data);
+      }
+    };
+    init();
+  }, []);
+
+  return data ? (
+    <Row className="app-user-edit">
+      <Col sm="12">
+        <Card>
+          <CardBody className="pt-2">
+            <Nav pills>
+              <NavItem>
+                <NavLink active={activeTab === "1"} onClick={() => toggle("1")}>
+                  <User size={14} />
+                  <span className="align-middle d-none d-sm-block">
+                    Thông tin sản phẩm
+                  </span>
+                </NavLink>
+              </NavItem>
+            </Nav>
+            <TabContent activeTab={activeTab}>
+              <TabPane tabId="1">
+                <ProductTab initial={data} />
+              </TabPane>
+            </TabContent>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
+  ) : (
+    <Alert color="danger">
+      <h4 className="alert-heading">Sản phẩm Không tồn tại</h4>
+    </Alert>
+  );
+};
+export default EmployeeEdit;
