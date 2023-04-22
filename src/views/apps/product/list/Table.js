@@ -263,10 +263,10 @@ const EmployeesList = (props) => {
       cell: (row) => (
         <Badge
           className="text-capitalize"
-          color={availableBlock[row.available].bgr}
+          color={availableBlock[row.available]?.bgr}
           pill
         >
-          {availableBlock[row.available].text}
+          {availableBlock[row.available]?.text}
         </Badge>
         // <CustomInput
         // onChange={(e)=>{
@@ -577,7 +577,6 @@ const EmployeesList = (props) => {
                   )}
                 />
               </Col>
-              
             </Row>
             <Row className="justify-content-end mt-2">
               <Button.Ripple color="primary" className="mx-1" type="submit">
