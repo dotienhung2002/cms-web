@@ -31,6 +31,8 @@ const ProductImage = ({
   setListImage,
   keyParent,
 }) => {
+  console.log(listImage);
+
   return (
     <>
       <Row className="justify-content-start mb-2 px-1">
@@ -64,10 +66,13 @@ const ProductImage = ({
                   onClick={() => {
                     const listTemp =
                       listImage[`listProductDetail[${keyParent}].images`];
-                    listTemp.splice(index,1)
-                    setListImage((prev)=>{
-                        return {...prev,[`listProductDetail[${keyParent}].images`]:listTemp}
-                    })
+                    listTemp.splice(index, 1);
+                    setListImage((prev) => {
+                      return {
+                        ...prev,
+                        [`listProductDetail[${keyParent}].images`]: listTemp,
+                      };
+                    });
                   }}
                 >
                   <Trash2 size={15} />

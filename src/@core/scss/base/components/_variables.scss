@@ -17,17 +17,17 @@
 $base-font-size: 14px !default;
 $body-direction: ltr !default; // Default ltr, change it to rtl for Right To Left support.
 $content-padding: 2rem !default;
-$white:white;
-$font-size-base:16;
-$font-size-xl:16;
-$line-height-xl:16;
-$input-padding-y-xl:16;
-$font-size-sm:14;
-$line-height-sm:14;
-$input-padding-y-sm:14;
-$border-color:black;
-$primary:#7367f0;
-$text-muted:white;
+$white: white;
+$font-size-base: 16;
+$font-size-xl: 16;
+$line-height-xl: 16;
+$input-padding-y-xl: 16;
+$font-size-sm: 14;
+$line-height-sm: 14;
+$input-padding-y-sm: 14;
+$border-color: black;
+$primary: #22292f;
+$text-muted: white;
 //  ------------------------------
 //    Colors
 //  ------------------------------
@@ -108,9 +108,15 @@ $border-radius-xs: 0.12rem !default;
 $input-border-radius-xl: $border-radius-xl !default;
 $input-border-radius-xs: $border-radius-xs !default;
 
-$input-height-xl: (($font-size-xl * $line-height-xl) + ($input-padding-y-xl * 2)) !default;
-$input-height-xs: (($font-size-xs * $line-height-xs) + ($input-padding-y-xs * 2)) !default;
-$input-height-sm: (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2)) !default;
+$input-height-xl: (
+  ($font-size-xl * $line-height-xl) + ($input-padding-y-xl * 2)
+) !default;
+$input-height-xs: (
+  ($font-size-xs * $line-height-xs) + ($input-padding-y-xs * 2)
+) !default;
+$input-height-sm: (
+  ($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2)
+) !default;
 
 //  -------------------------------
 //  Blank Page Bg Color

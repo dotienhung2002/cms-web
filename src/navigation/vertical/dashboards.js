@@ -1,15 +1,14 @@
-import { Home, Circle, FileText, ShoppingBag } from 'react-feather'
+import { Home, Circle, FileText, ShoppingBag } from "react-feather";
 
 export default [
   {
-    id: 'statistical',
-    title: 'Thống kê',
+    id: "statistical",
+    title: "Thống kê",
     icon: <Home size={20} />,
-    badge: 'light-warning',
-    roles:['1'],
-    navLink: '/dashboard/statistical',
-  }
-  ,
+    badge: "light-warning",
+    roles: ["1"],
+    navLink: "/dashboard/statistical",
+  },
   {
     id: "invoice",
     title: "Đơn hàng",
@@ -32,7 +31,7 @@ export default [
     title: "Sản phẩm",
     icon: <ShoppingBag size={20} />,
     navLink: "/cms/product/list",
-    roles: ["1","0"],
+    roles: ["1", "0"],
 
     children: [
       {
@@ -40,17 +39,15 @@ export default [
         title: "Danh sách",
         icon: <Circle size={12} />,
         navLink: "/cms/product/list",
-    roles: ["1","0"],
-
+        roles: ["1", "0"],
       },
       {
         id: "add",
         title: "Thêm",
         icon: <Circle size={12} />,
         navLink: "/cms/product/add",
-    roles: ["1","0"],
-
+        roles: ["1", "0"],
       },
     ],
   },
-]
+];

@@ -8,7 +8,7 @@ import { getHomeRouteForLoggedInUser, isObjEmpty } from "@Utils";
 import classnames from "classnames";
 import { Fragment, useState } from "react";
 import { Coffee } from "react-feather";
-import { useForm,Controller } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Slide, toast } from "react-toastify";
 import {
@@ -20,7 +20,7 @@ import {
   Input,
   Label,
   Row,
-  Spinner
+  Spinner,
 } from "reactstrap";
 import * as yup from "yup";
 import Service from "../../../helper/request";
@@ -55,7 +55,6 @@ const Login = (props) => {
     control,
     formState: { errors },
   } = useForm({
-    
     resolver: yupResolver(schema),
     mode: "all",
   });
@@ -94,8 +93,7 @@ const Login = (props) => {
             setTimeout(() => {
               window.location.href = getHomeRouteForLoggedInUser("admin");
             }, 1500);
-          }
-          else {
+          } else {
             setDisable(false);
           }
         }
@@ -106,11 +104,6 @@ const Login = (props) => {
   return (
     <div className="auth-wrapper auth-v2">
       <Row className="auth-inner m-0">
-        <Col className="d-none d-lg-flex align-items-center p-5" lg="8" sm="12">
-          <div className="w-100 d-lg-flex align-items-center justify-content-center px-5">
-            <img className="img-fluid" src={source} alt="Login V2" />
-          </div>
-        </Col>
         <Col
           className="d-flex align-items-center auth-bg px-2 p-lg-5"
           lg="4"
@@ -143,17 +136,19 @@ const Login = (props) => {
                 <Label className="form-label" for="login-username">
                   Tên tài khoản
                 </Label>
-                
-                 <Controller
-                name="username"
-                control={control}
-                render={({ field }) => (
-                  <Input
-                  {...field}
-                  className={classnames({ "is-invalid": errors["username"] })}
+
+                <Controller
+                  name="username"
+                  control={control}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      className={classnames({
+                        "is-invalid": errors["username"],
+                      })}
+                    />
+                  )}
                 />
-                )}
-              />
                 <p className="text-danger">{errors.username?.message}</p>
               </FormGroup>
               <FormGroup>
@@ -165,19 +160,19 @@ const Login = (props) => {
                     <small>Quên mật khẩu?</small>
                   </Link>
                 </div>
-              
 
-
-<Controller
-                name="password"
-                control={control}
-                render={({ field }) => (
-                  <InputPasswordToggle
-                  className={classnames({ "is-invalid": errors["password"] })}
-                  {...field}
+                <Controller
+                  name="password"
+                  control={control}
+                  render={({ field }) => (
+                    <InputPasswordToggle
+                      className={classnames({
+                        "is-invalid": errors["password"],
+                      })}
+                      {...field}
+                    />
+                  )}
                 />
-                )}
-              />
                 <p className="text-danger">{errors.password?.message}</p>
               </FormGroup>
               {/* <FormGroup>
@@ -188,7 +183,6 @@ const Login = (props) => {
                   label="Remember Me"
                 />
               </FormGroup> */}
-
 
               <Button.Ripple
                 type="submit"
@@ -231,6 +225,11 @@ const Login = (props) => {
             </div>
           */}
           </Col>
+        </Col>
+        <Col className="d-none d-lg-flex align-items-center p-5" lg="8" sm="12">
+          <div className="w-100 d-lg-flex align-items-center justify-content-center px-5">
+            <img className="img-fluid" src={source} alt="Login V2" />
+          </div>
         </Col>
       </Row>
     </div>
