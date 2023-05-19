@@ -58,8 +58,7 @@ const EmployeeTab = ({ initial }) => {
     role: roleObject[initial.role],
     status: statusObject[initial.status],
     gender: genderObject[initial.gender],
-    birthDay:null
-
+    birthDay: null,
   };
 
   const {
@@ -89,11 +88,11 @@ const EmployeeTab = ({ initial }) => {
     setDisable(true);
     const customData = {
       id: initial.id,
-      name: data.name?.trim()||null,
+      name: data.name?.trim() || null,
       birthDay: moment(data.birthday).format("yyyy-MM-DD"),
-      phone: data.phone?.trim()||null,
-      gender: data?.gender?.value||null,
-      email: data.email?.trim()||null,
+      phone: data.phone?.trim() || null,
+      gender: data?.gender?.value || null,
+      email: data.email?.trim() || null,
       status: data.status.value,
       heigth: data.heigth,
       weight: data.weight,
@@ -173,45 +172,28 @@ const EmployeeTab = ({ initial }) => {
               <p className="text-danger">{errors.name?.message}</p>
             </Col>
 
-            <Col sm="4">
+            {/* <Col sm="4">
               <FormGroup>
                 <Label className="d-block" for="dob">
                   Ngày sinh
                 </Label>
-                {/* <Controller
-                  name="birthDay"
+                <Controller
                   control={control}
+                  name="birthDay"
                   render={({ field }) => (
-                    <Flatpickr
-                      className={classnames("form-control", {
+                    <ReactDatePicker
+                      className={classnames("form-control input", {
                         "is-invalid": errors["birthDay"],
                       })}
-                      placeholder="DD/MM/YYYY"
-                      {...field}
-                      options={{
-                        dateFormat: "d-m-Y",
-                        maxDate: moment(new Date()).format("DD/MM/yyyy"),
-                      }}
+                      placeholderText="Select date"
+                      onChange={(e) => field.onChange(e)}
+                      selected={field.value}
                     />
                   )}
-                /> */}
-                 <Controller
-            control={control}
-            name="birthDay"
-            render={({ field }) => (
-              <ReactDatePicker
-                className={classnames("form-control input", {
-                  "is-invalid": errors['birthDay'],
-                })}
-                placeholderText="Select date"
-                onChange={(e) => field.onChange(e)}
-                selected={field.value}
-              />
-            )}
-          />
+                />
                 <p className="text-danger">{errors.birthDay?.message}</p>
               </FormGroup>
-            </Col>
+            </Col> */}
             <Col sm="4">
               <Label>Số điện thoại:</Label>
               <Controller
@@ -268,7 +250,7 @@ const EmployeeTab = ({ initial }) => {
               />
               <p className="text-danger">{errors.email?.message}</p>
             </Col>
-            <Col sm="4">
+            {/* <Col sm="4">
               <Label>Cân nặng:</Label>
               <Controller
                 name="weight"
@@ -309,7 +291,7 @@ const EmployeeTab = ({ initial }) => {
               <p className="text-danger">
                 {errors.height?.message && "Chiều cao không hợp lệ"}
               </p>
-            </Col>
+            </Col> */}
 
             <Col sm="4">
               <Label>Trạng thái:</Label>

@@ -11,7 +11,7 @@ import {
   Row,
   UncontrolledButtonDropdown,
 } from "reactstrap";
-import {numberToCurrencyStyle} from '@Utils'
+import { numberToCurrencyStyle } from "@Utils";
 
 import {
   Box,
@@ -30,7 +30,7 @@ const RevenueReport = (props) => {
   const customer = [];
   const product = [];
   const revenue = [];
-  const year=[]
+  const year = [];
 
   let totalRevenue = 0;
   props?.overallReport?.forEach((item) => {
@@ -39,7 +39,7 @@ const RevenueReport = (props) => {
     customer.push(item?.customerCount);
     product.push(item?.productCount);
     revenue.push(item?.revenue);
-    year.push("Tháng "+item?.month)
+    year.push("Tháng " + item?.month);
   });
   const orderLength = order.length;
   const customerLength = order.length;
@@ -84,7 +84,7 @@ const RevenueReport = (props) => {
         },
       },
       xaxis: {
-        categories:year,
+        categories: year,
         labels: {
           style: {
             colors: "#b9b9c3",
@@ -241,7 +241,7 @@ const RevenueReport = (props) => {
                 <span className="align-middle">Sản phẩm</span>
               </NavLink>
             </NavItem>
-           
+
             <NavItem>
               <NavLink
                 active={active === "4"}
@@ -303,10 +303,10 @@ const RevenueReport = (props) => {
               size="sm"
               caret
             >
-              2022
+              2023
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem className="w-100">2022</DropdownItem>
+              <DropdownItem className="w-100">2023</DropdownItem>
             </DropdownMenu>
           </UncontrolledButtonDropdown>
           <div className="d-flex justify-content-center">

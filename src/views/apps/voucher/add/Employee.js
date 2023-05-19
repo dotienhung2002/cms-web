@@ -63,9 +63,10 @@ const EmployeeTab = ({ selectedUser }) => {
     console.log(data);
     const customData = {
       ...data,
-      active:data?.status?.value,
-      startDate:data?.startDate&&moment(data?.startDate).format("DD/MM/yyyy"),
-      endDate:data?.endDate&&moment(data?.endDate).format("DD/MM/yyyy"),
+      active: data?.status?.value,
+      startDate:
+        data?.startDate && moment(data?.startDate).format("DD/MM/yyyy"),
+      endDate: data?.endDate && moment(data?.endDate).format("DD/MM/yyyy"),
     };
     if (isObjEmpty(errors)) {
       setDisable(true);
@@ -155,7 +156,7 @@ const EmployeeTab = ({ selectedUser }) => {
               <Controller
                 control={control}
                 name="startDate"
-                rules={{required:"Vui lòng chọn trường này"}}
+                rules={{ required: "Vui lòng chọn trường này" }}
                 render={({ field }) => (
                   <DatePicker
                     className="datepicker form-control"
@@ -183,14 +184,12 @@ const EmployeeTab = ({ selectedUser }) => {
                 )}
               />
               <p className="text-danger">{errors.startDate?.message}</p>
-
             </Col>
             <Col md="4" className="mb-2">
               <Label for="search-invoice">Đến:</Label>
               <Controller
                 control={control}
-                rules={{required:"Vui lòng chọn trường này"}}
-
+                rules={{ required: "Vui lòng chọn trường này" }}
                 name="endDate"
                 render={({ field }) => (
                   <DatePicker
@@ -219,7 +218,6 @@ const EmployeeTab = ({ selectedUser }) => {
                 )}
               />
               <p className="text-danger">{errors.endDate?.message}</p>
-
             </Col>
             <Col sm="4">
               <Label for="nameVerticalIcons">Ghi chú:</Label>
@@ -233,7 +231,7 @@ const EmployeeTab = ({ selectedUser }) => {
                 )}
               />
             </Col>
-            <Col sm="4">
+            {/* <Col sm="4">
               <Label for="nameVerticalIcons">Email:</Label>
               <Controller
                 name="email"
@@ -248,7 +246,7 @@ const EmployeeTab = ({ selectedUser }) => {
                 )}
               />
               <p className="text-danger">{errors.email?.message}</p>
-            </Col>
+            </Col> */}
             <Col md="4" className="mb-2">
               <Label for="search-invoice">Trạng thái:</Label>
               <Controller

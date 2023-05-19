@@ -45,6 +45,35 @@ const EcommerceDashboard = () => {
         </Col>
       </Row>
       <Row className="match-height">
+        <Col lg="12" md="12">
+          <RevenueReport
+            primary={colors.primary.main}
+            warning={colors.warning.main}
+            overallReport={overallReport}
+          />
+        </Col>
+
+        {/* <Col lg="12" md="12"> */}
+        {/* <Row className="match-height"> */}
+        {/* <Col lg="6" md="3" xs="6"> */}
+        {/* <OrdersBarChart warning={colors.warning.main} /> */}
+        {/* <TopProduct /> */}
+        {/* </Col> */}
+        {/* <Col lg="6" md="3" xs="6"> */}
+        {/* <OrdersBarChart warning={colors.warning.main} /> */}
+        {/* <TopCustomer /> */}
+        {/* </Col> */}
+
+        {/* <Col lg="6" md="3" xs="6">
+              <ProfitLineChart info={colors.info.main} />
+            </Col>
+            <Col lg="12" md="6" xs="12">
+              <Earnings success={colors.success.main} />
+            </Col> */}
+        {/* </Row> */}
+        {/* </Col> */}
+      </Row>
+      <Row className="match-height">
         <Col lg="12" xs="12">
           <OrderTable statusCount={statusCount} />
         </Col>
@@ -76,36 +105,6 @@ const EcommerceDashboard = () => {
         {/* <Col lg='4' md='6' xs='12'>
           <CardTransactions />
         </Col> */}
-      </Row>
-
-      <Row className="match-height">
-        <Col lg="12" md="12">
-          <RevenueReport
-            primary={colors.primary.main}
-            warning={colors.warning.main}
-            overallReport={overallReport}
-          />
-        </Col>
-
-        {/* <Col lg="12" md="12"> */}
-        {/* <Row className="match-height"> */}
-        {/* <Col lg="6" md="3" xs="6"> */}
-        {/* <OrdersBarChart warning={colors.warning.main} /> */}
-        {/* <TopProduct /> */}
-        {/* </Col> */}
-        {/* <Col lg="6" md="3" xs="6"> */}
-        {/* <OrdersBarChart warning={colors.warning.main} /> */}
-        {/* <TopCustomer /> */}
-        {/* </Col> */}
-
-        {/* <Col lg="6" md="3" xs="6">
-              <ProfitLineChart info={colors.info.main} />
-            </Col>
-            <Col lg="12" md="6" xs="12">
-              <Earnings success={colors.success.main} />
-            </Col> */}
-        {/* </Row> */}
-        {/* </Col> */}
       </Row>
     </div>
   );
